@@ -1,25 +1,19 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * @author Jan Krieghoff
  */
 
-var data = [
-	{"id": 1, "artnr": "100", "artbez": "BMW M3", "preis":86000.00},
-	{"id": 2, "artnr": "101", "artbez": "VW Golf", "preis":27000.00},
-	{"id": 3, "artnr": "102", "artbez": "BMW M4 Gran Coupe", "preis":97000.00}
-];
+var app = angular.module('myApp', []);
 
-var app = angular.module('app', []);
+function GetArtikel($scope, $http) {
 
-app.controller("AppCtrl", function($http) {
-	var app = this;
-	$http.get("http://localhost:8080/artikel")
-			.success(function (data) {
-				app.artikel = data;
-	})
-})
+    $scope.listeArtikel = null;
 
-app.get('/artikel', function(reg, res){
-	res.send(data)
-});
+    $http.get('http://localhost:8080/meinshop-1.0/rest/artikel/')
+         .success(function (data) {
+             $scope.listeArtikel = data;
+         })
+         .error(function (data, status, headers, config) {
+             //  TODO: Fehlerbehandlung
+         });
+}

@@ -25,21 +25,21 @@ public class ArtikelService {
         
         Artikel a1 = new Artikel();
         a1.setId(1);
-        a1.setArtikelnummer("ladfji2k8");
+        a1.setArtikelnummer("2546879516");
         a1.setBezeichnung("Buegeleisen");
         a1.setPreis(BigDecimal.valueOf(499.99));
         a1.setVerfuegbar(true);
         
         Artikel a2 = new Artikel();
         a2.setId(3);
-        a2.setArtikelnummer("leimdm388");
+        a2.setArtikelnummer("8455532149");
         a2.setBezeichnung("Magnet");
         a2.setPreis(BigDecimal.valueOf(45.99));
         a2.setVerfuegbar(false);
         
         Artikel a3 = new Artikel();
         a3.setId(6);
-        a3.setArtikelnummer("bad838920");
+        a3.setArtikelnummer("5478541110");
         a3.setBezeichnung("Baum");
         a3.setPreis(BigDecimal.valueOf(45.99));
         a3.setVerfuegbar(true);
