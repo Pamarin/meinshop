@@ -5,7 +5,7 @@
 
 var app = angular.module('myApp', []);
 
-function GetArtikel($scope, $http) {
+function Artikel ($scope, $http) {
 
     $scope.listeArtikel = null;
 

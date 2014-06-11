@@ -2,13 +2,13 @@
 <!--
 @author Jan Krieghoff
 -->
-<html>
+<html ng-app="myApp">
     <head>
         <title>Artikel</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body style="font-family: arial;" ng-app="myApp">
+    <body style="font-family: arial;" >
 		<div id="layout" style="width:1000px; margin: auto;">
 			<div id="root" style="width:100%; padding:5px;">
 				<div id="header" style="width:100%; background-color: #ccccff; padding: 10px;  ">
@@ -26,35 +26,42 @@
 				</div>
 				<div id="main" style="width:100%; background-color: #eeeeee; min-height: 500px; margin-top: 5px; padding:10px;">
 					<div id="search">
-						<span style="font-weight: bold; font-size:14pt;">Artikel suchen</span>
+						<span style="font-weight: bold; font-size:14pt;">Artikel eintragen</span>
 						<div>
 							<form>
 								<table>
 									<tr>
 										<td>
-											<label>Produktname:</label>
-											<input type="text" name="name" ng-model="newprod.name" />
+											<label>Artikelnummer:</label>
+											<input type="text" name="name" ng-model="newArtikel.artikelnummer" />
 										</td>
 									</tr>
 									<tr>
 										<td>
 											<label>Preis:</label>
-											<input type="text" name="preis" ng-model="newprod.preis" />
+											<input type="text" name="preis" ng-model="newArtikel.preis" />
 										</td>
 									</tr>
 									<tr>
 										<td>
 											<label>Bezeichnung:</label>
-											<input type="text" name="bez" ng-model="newprod.bez" />
+											<input type="text" name="bez" ng-model="newArtikel.bezeichnung" />
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label>Verfügbarkeit</label>
+											<input type="text" name="bez" ng-model="newArtikel.verfuegbar" />
 										</td>
 									</tr>
 								</table>
-								<input type="hidden" ng-model="newprod.id" />
-								<input type="button" value="Artikel speichern" ng-click="saveProd()" class="btn btn-primary" />
+								<input type="hidden" ng-model="newArtikel.id" />
+								<input type="button" value="Artikel speichern" ng-click="saveProd()" />
 							</form>
 							<br /><br />
-							<div ng-controller="GetArtikel">
-								<table class="table table-striped table-bordered">
+							<div ng-controller="Artikel">
+								<span style="font-weight: bold; font-size:14pt;">Artikel anzeigen</span>
+								<table>
 									<thead>
 										<tr>
 											<th>ID</th>
